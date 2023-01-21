@@ -13,7 +13,8 @@ public class Main {
 
 
     Worker.OnTaskDoneListener listener = System.out::println;
-    Worker worker = new Worker(listener);
+    Worker.OnTaskErrorListener errorListener = System.out::println;
+    Worker worker = new Worker(listener, errorListener);
     worker.start();
   }
 }
